@@ -33,3 +33,11 @@ have installed and started pianobar, and to have not modified any action keys.
 
 The daemon script only works in Gnome, as it uses dbus to listen for Gnome's
 media key signals.
+
+
+Bug Reports
+===========
+
+If you find any problems with this project, please do not hesitate to visit my
+bugtracker at http://leetcode.net/mantis/ and submit a report.
+

@@ -1,0 +1,35 @@
+pianobar-python
+
+About
+=====
+
+This is a set of wrapper libraries and scripts designed to work with the
+Pandora client "pianobar".  pianobar was originally created Lars-Dominik Braun,
+and can be found at http://6xq.net/html/00/17.html
+
+The main purpose of this project is to allow a more native/pretty interface to
+pianobar, or at least from the perspective of a Gnome user.  The included
+"daemon" script interfaces with Gnome's play/stop/next media keys so that the
+user can control pianobar without having to find the right terminal window, or
+while running pianobar from a disconnected screen session.
+
+
+Usage
+=====
+
+Running the daemon script is as easy as running:
+
+  python path/to/pianobar/daemon.py
+
+
+Caveats
+=======
+
+This has only been tested on my own local system:
+  Ubuntu 9.10 with pianobar compiled and installed to /usr/local/
+
+Currently, the control system and daemon script require the user to already
+have installed and started pianobar, and to have not modified any action keys.
+
+The daemon script only works in Gnome, as it uses dbus to listen for Gnome's
+media key signals.

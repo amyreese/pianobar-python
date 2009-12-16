@@ -11,7 +11,9 @@ The main purpose of this project is to allow a more native/pretty interface to
 pianobar, or at least from the perspective of a Gnome user.  The included
 "daemon" script interfaces with Gnome's play/stop/next media keys so that the
 user can control pianobar without having to find the right terminal window, or
-while running pianobar from a disconnected screen session.
+while running pianobar from a disconnected screen session.  The "event" script
+handles event_command data from pianobar and generates system notifications via
+libnotify that relay song data, as well as any error messages.
 
 
 Usage
@@ -20,6 +22,11 @@ Usage
 Running the daemon script is as easy as running:
 
   python path/to/pianobar/daemon.py
+
+Using the event handler script requires modifying your pianobar/config file so
+that the event_command value is set to the event script, such as:
+
+  event_command = path/to/pianobar/event.py
 
 
 Caveats
@@ -33,6 +40,8 @@ have installed and started pianobar, and to have not modified any action keys.
 
 The daemon script only works in Gnome, as it uses dbus to listen for Gnome's
 media key signals.
+
+The event handler script requires pynotify to be installed.
 
 
 Bug Reports

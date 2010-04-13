@@ -35,7 +35,7 @@ class Event:
 		"""
 
 		# Error from pianobar -- generate a notification and stop event handling
-		if params["pRet"] != "0":
+		if params["pRet"] != "1":
 			print "error #%s: '%s'" % (params["pRet"], params["pRetStr"])
 			pynotify.Notification("pianobar error #%s" % params["pRet"], params["pRetStr"]).show()
 			return

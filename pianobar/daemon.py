@@ -36,6 +36,10 @@ class Daemon:
 
 	def run(self):
 		mediakey_object = self.bus.get_object("org.gnome.SettingsDaemon","/org/gnome/SettingsDaemon/MediaKeys")
+		
+		mediakey_object.GrabMediaPlayerKeys("PianobarPython", 0,
+                               dbus_interface='org.gnome.SettingsDaemon.MediaKeys')
+
 		mediakey_object.connect_to_signal("MediaPlayerKeyPressed", self.control.mediakey)
 
 		mainloop = gobject.MainLoop()
